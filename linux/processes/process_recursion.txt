@@ -1,0 +1,8 @@
+# Processes can be called and ran recursively
+
+# if you have a script called 'script1.sh' and the contents of that script are
+# "#!/bin/echo", then calling './script1.sh' will return the string "./script1.sh"
+# because 'script1.sh' calls execve to '/bin/echo' which is called with the command './script1.sh' which echoes that exact string.
+
+# If you the make a script called 'script2.sh' and the contents are '#!./script1', 
+# then 'script2.sh' calls 'script1.sh' which call 'echo' which calls execve to echo which returns './script1 ./script2' 

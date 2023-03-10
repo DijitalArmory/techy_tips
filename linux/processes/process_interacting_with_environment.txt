@@ -1,0 +1,21 @@
+# All programs must intercat with the 'outside' world (external to this process)
+# This is primarily done via system calls. 
+# - Each system call is well-documented in section two of the man pages (man 2 <syscall)
+# The 'strace' tool is used to tracesystem calls
+
+
+# - man syscall <-- gives detailed overview
+# - man 2 <syscall name> <-- gives detailed descriptions of individual syscalls
+
+# NOTE:
+# you can trigger syscalls with the 'syscall' function
+# Example:
+# a conventional syscall function --> read(fd, buf, 1024);
+# syscall function --> syscall(0, buf, 104) 	<-- same as read()
+
+
+# -----------------------------------------------------------------------------
+
+# Another way of interacting w/the 'outside world' is by sharing memory with other processes.
+# This requires system calls to establish, but once establish, system calls are not required
+# Easy way -- use a shared memory-mapped file in /dev/shm

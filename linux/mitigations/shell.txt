@@ -1,0 +1,5 @@
+# 1. /bin/sh Mitigation
+# Many command injections end up hijacking /bin/sh
+# if /bin/sh is run as SUID (eUID == 0 but rUID != 0 : it will drop privileges to the rUID (eUID != 0 AND rUID != 0)
+# To DISABLE this mitigation, run the command...
+# options=[[sh -p], [bash -p]]

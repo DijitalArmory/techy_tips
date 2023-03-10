@@ -1,0 +1,20 @@
+### Loading Dynamically Linked ELFs ###
+
+## The interpreter LOCATES the libraries
+# 1. The program and its interpreter are loaded by the kernel
+# 2. The interpreter locates the libraries
+# - LD_PRELOAD env variable and anything in '/etc/ld.so.preload'
+# - LD_LIBRARY_PATH env variable (can be set in the shell)
+# - DT_RUNPATH or DT_RPATH specified in the binary file (both can be modified w/patchelf)
+# - system-wide configuration -- /etc/ld.so.conf
+# - /lib/ and /usr/lib
+
+## The interpreter LOADS the libraries
+# - these libraries can depend on other libraries causing other libraries to be loaded
+# - relocations updated
+
+## setting the LD_PRELOAD env variable ##
+# Example...
+# - gcc -shared -o name.so program.c
+# - LD_PRELOAD=name.so (LD_PRELOAD is loaded into process)
+# - ./calling-program (LD_PRELOAD is called in the calling program because it is loaded into it)

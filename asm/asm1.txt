@@ -1,0 +1,109 @@
+### Assembly ###
+----------------
+
+# Assembly language is the text representation of binary (1's and 0's)
+
+# Binary and assembly code are equivelant
+
+# Example: (binary) 01010101 == (asm) "push" "rbp"
+
+# Assembly is assembled (not compiled) into binary 
+
+# Assembly tells the CPU what to do by giving "Instructions"
+# Example: <operatio (VERB)> <operand (NOUN)> 
+
+# Types of Data...
+# data directly given to it as a part of the instruction
+# data that is close at hand
+# data in storage
+
+
+##########################
+# **** Control FLow **** #
+##########################
+#### Jumps:
+# The "jmp" operator skips code after it and executes its operand
+# Example: "JMP <label/func>"
+
+#### Conditional Jumps ####
+# je = 'jump if equal
+# jne = 'jump if not equal'
+# jg = 'jump if greater'
+# jl = 'jump if less'
+# jle = 'jump if less or equal'
+# jge = 'jump if greater or equal'
+# ja = 'jump if above' (unsigned)
+# jb = 'jump if below' (unsigned)
+# jae = 'jump if above or equal' (unsigned)
+# jbe = 'jump if below or equal' (unsigned)
+# js = 'jump if singed'
+# jns = 'jump if not signed'
+# jo = 'jump if overflow'
+# jno = 'jump if not overflow'
+# jz = 'jump if zero'
+# jnz = 'jump if not zero'
+
+#### What is 'Equal'
+# equal is the last thing checked for equality
+
+#### Conditionals (RFLAGS)
+# Conditional jumps check conditions stored in the "flags" register: 'rflags'
+
+#### Looping
+# With conditional jumps, loops can be implemented...
+# Example: 
+# "mov rax, 0
+# "LOOP_HEADER" <-- beginning of loop (loop is implemented as func name "LOOP_HEADER")
+# "inc rax" <-- add +1 to register 'rax'
+# "cmp rax, 10" <-- compare the values of register 'rax' and 10
+# "jb LOOP_HEADER" <-- jump back top 'LOOP_HEADER' if rax is below the value '10'
+# // here, now rax is 10
+# With looping and control flow, almost any program can be written
+
+
+#### Calling Conventions ####
+# In the cdecl calling convention, the following rules apply:
+# 1. Arguments are passed on the stack, from right to left.
+# 2. The caller is responsible for cleaning up the stack after the function call.
+# 3. The return value is stored in the EAX register.
+# 4. The caller is responsible for preserving the values of all registers, except for EAX, ECX, and EDX, which may be used by the callee and overwritten.
+# 5. The callee is not allowed to modify the stack frame pointer (EBP).
+# 5. Pointers are passed as 32-bit values on the stack.
+# 6. Functions are not required to preserve the contents of the FPU, MMX, or XMM registers.
+
+
+#### Sytem Calls ####
+# read: Reads data from a file descriptor. -- 0x00
+# write: Writes data to a file descriptor. -- 0x01
+# open: Opens a file or device. -- 0x02
+# close: Closes a file descriptor. -- 0x03
+# stat: Gets information about a file. -- 0x0f
+# lseek: Changes the file offset of a file descriptor. -- 0x14
+# fork: Creates a new process. -- 0x39
+# execve: Replaces the current process image with a new process image. -- 0x3b
+# exit: Terminates the current process. -- 0x3c 
+# waitpid: Waits for a child process to terminate. -- 0x3d
+# kill: Sends a signal to a process. -- 0x3e
+# mmap: Maps a file or anonymous memory to the address space of a process. -- 0x9b
+# munmap: Unmaps a memory region from the address space of a process. -- 0x9c
+# brk: Changes the size of the data segment of a process. -- 0x9d
+# ioctl: Controls the behavior of a device. -- 0x16
+####
+# Some system calls take strings as arguments
+
+
+#### Exiting The Program #####
+# For Bash Scripts:
+# "mov rdi, 42" -- program's return code
+# "mov rax, 60" -- system call number of exit()
+# "syscall" -- do the system call 
+
+#### Building The Program ####
+# Example of building a program that only quits and exits...
+# ".intel_syntax noprefix" -- tells the assembler that intel syntax is being used
+# "mov rdi, 42" -- program's return code
+# "mov rax, 60" -- system call number of exit()
+# "syscall" -- do the system call 
+#### assembling with GCC ...
+# Example:
+# "gcc -nostdlib -o quitter quitter.s"

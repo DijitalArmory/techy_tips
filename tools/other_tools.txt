@@ -1,0 +1,21 @@
+# setarch -- change reported architecture in new program environment and/or set personality flags
+# command execution example in man page
+
+# whiptail - display dialog boxes from shell scripts
+
+# awk -- pattern scanning and text processing language
+# command execution -- https://stackoverflow.com/questions/20389799/using-output-of-awk-to-run-command
+
+# sed -- stream editor for filtering and transforming text
+# command execution -- https://linuxhint.com/50_sed_command_examples/#s44
+
+# ed -- line oriented text editor
+# command execution -- chatgpt: "write a bash command using the ed tool to cat out a file"
+###
+ed -s flag << EOF
+> 1, $p
+> q
+> EOF
+###
+
+# date - print or set the system date and time

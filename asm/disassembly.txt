@@ -1,0 +1,7 @@
+#### Disassembly #####
+######################
+
+#### Disassemble an asm program ####
+# objdump -M intel -d <file.s>
+#### Dump the disassembly into a file
+# objcopy --dump-section .text=quitter_bin_code_file <file.s>  

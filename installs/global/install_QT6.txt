@@ -1,0 +1,1 @@
+# Follow directions in https://web.stanford.edu/dept/cs_edu/resources/qt/install-linux

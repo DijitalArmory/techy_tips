@@ -1,0 +1,34 @@
+### CPU Registers ###
+---------------------
+
+# Fast, temporary stores for data (think 'cash == data; cash-register == cpu-register)
+# provide rapid access to data
+# The typical location where data is stored for the CPU to interact with 
+
+# in a 64 bit architecture, a register holds 64 bits (8 bytes)
+# in a 32 bit architecture, a register holds 32 bits (4 bytes)
+
+### Behavior ###
+# Note: If you write to a partial (less than the architecture [64 or 32 bits]) register, the rest of the resgister will be zeroed out. This is done for performance reasons
+# So if there is an earlier instruction, "mov rax, 0xffffffffffffffff"...
+# ... and then a another instruction "mov rax, 0x539" ...
+# ... then rax == 0x0000000000000539
+
+### MOV Instruction ###
+# MOV does not actually "move" data into a register, but it COPIES data into a register
+
+### Extending Data ###
+# if you move (dec) -1 into 32 register EAX --> "mov eax, 0xffffffff... The you have (dec)-1 & (dec)4294967295
+# BUT if you move the 32 bit EAX register into the 64 bit RAX register --> "mov rax, eax", now you only have (dec)4294967295 (rax == 0x00000000ffffffff) & not (dec)-1
+# the 'Move Sign-Extended' register solves this proble...
+# ... "movsx rax, eax"; now you have (rax == 0xffffffffffffffff) (dec)-1 AND (dec)4294967295
+
+
+### Special Registers ###
+# You should not write to register "RIP" (instruction pointer)
+# Be mindful of register "RSP" (stack pointer)
+
+################################################################################################################################################################################
+
+#### Register Sizes ####
+# x86: https://www.cs.uaf.edu/2017/fall/cs301/lecture/09_11_registers.html

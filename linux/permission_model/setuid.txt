@@ -1,0 +1,18 @@
+
+### One way to elevate privileges to root is to run a setuid binary
+# SUID is a bit in the linux permission model 
+
+# SUID executes program with the eUID file owner rather than the parent process
+# SGID executes a program with the eGID of the file owner rather than the parent process
+
+## Common examples of SUID are 'sudo', 'su', 'newgrp'.
+
+
+# NOTE:
+## There are 3 different types of user and group IDs...
+# - Effective(eUID, eGID) -- the UID/GID used for most acess checks
+# - Real (UID, GID) -- the "real"/actual UID/GID of the process owner (used for things such as signal checks) 
+# Saved -- a UID/GID that your process could switch it's eUID/eGID to. Used for temporarily dropping privliges
+
+### Set the setuid bit ###
+# command='chmod u+s <program_name>' <--- sets the permissions to the file's owner for any user running it

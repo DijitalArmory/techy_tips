@@ -1,0 +1,4 @@
+# Binaries (and libraries) that use dynamically loaded libraries rely on symbols (names)
+# to find libraries, resolve function calls into those libraries, etc. 
+
+

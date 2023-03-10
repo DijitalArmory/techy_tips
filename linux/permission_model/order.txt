@@ -1,0 +1,3 @@
+root_uid.txt
+setuid.txt
+sticky_bit.txt

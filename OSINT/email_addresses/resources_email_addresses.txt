@@ -1,0 +1,10 @@
+# hunter.io
+#phonebook.cz
+#clearbit (Google Chrome Extension -- free account)
+# EmailHippo.com -- for email validation
+# EmailChecker.net -- for email validation
+-------------------------------------------------------------------
+# ***utilize the forgot password feature***
+# - can tell if account exists
+# - can tell if Google authenticator is used (2FA)
+# - can get verification code sent to "xxxxxxx@xxxxx.com"

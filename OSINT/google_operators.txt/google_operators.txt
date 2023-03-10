@@ -1,0 +1,40 @@
+# Search in specific site
+# Example:
+# <expression> site: site.com
+# <expression> AND <expression> site: site.com
+
+# Search for specific string
+# Example:
+# "<string>" 
+# "<string>" site: site.com
+# "<string>" AND "<string>" site: site.com
+
+# Search with wildcard
+# Example:
+# "The * mentor" 
+
+# Search for filetype
+# Example:
+# site: site.com password filetype: pdf
+
+# Search for site subdomains
+# Example:
+# site: site.com -www
+
+# Exclude an object
+# Example:
+# site: site.com -www -forums
+
+# Search for string or subject in topic
+# Example:
+# <subject> intext: <password>
+# <subject> intext: <text> site: site.com 
+
+# Search text in url
+# Example:
+# <subject> inurl: <text> site: site.com
+
+# Search for text in a title
+# Example:
+# <subject> intitle: <string> site: site.com
+# intitle

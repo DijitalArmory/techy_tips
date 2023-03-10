@@ -1,0 +1,5 @@
+### Can This Process Load? ###
+
+# Before anything is loaded, the kernel checks for executable permissions
+
+# If a file is not executable, execve will fail

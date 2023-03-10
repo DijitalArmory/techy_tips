@@ -1,0 +1,14 @@
+#### Running ASM ####
+#####################
+
+#### Run ams as a process with python code:
+####
+# #!/usr/bin/env/ python3
+# import sys
+# import pwn
+# pwn.context.update(arch="x86-64")
+#asm = pwn.asm("""  mov rdi, 0x1337 """)
+# with pwn.process("/challenge/embryoasm") as process :
+#     process.write(asm)
+#     print(process.readallS())
+####

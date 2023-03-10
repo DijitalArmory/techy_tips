@@ -1,0 +1,20 @@
+### PNG TERMINOLOGY ###
+-------------------------
+
+Block – The smallest size of data units that can be written to storage
+------------------------------------------------------------------------
+
+Header – The starting point of the file.
+------------------------------------------------------------------------
+
+Footer – The last bytes of the file.
+------------------------------------------------------------------------
+
+Fragment – One or several blocks are belonging to a single file.
+------------------------------------------------------------------------
+
+Base-fragment – First fragment of file container, the header of the file.
+------------------------------------------------------------------------
+
+Fragmentation point – The last block just before fragmentation takes place. Multiple fragments in any file results in several fragmentation points.
+------------------------------------------------------------------------

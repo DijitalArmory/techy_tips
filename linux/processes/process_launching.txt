@@ -1,0 +1,15 @@
+# A notmal ELF automatically calls __libc_start_main, which calls the main function, whicg runs the program
+
+###
+# __libc_start_main is the entry point to the program.
+## you can find the entry_point address in the ELF header using the 'readelf' tool
+# Example:
+#  'readelf -h program_name'
+## You can verify thisnaddress by disassembling the program and finding the entry point address using the 'objump' tool
+# Example: 
+# 'objdump -d program name' (the entry point address shouuld be at the '<start>' section of the disassembled program)
+# within the <start> section, you will see a few lines of 'setup' and then a "__libc_start_main" symbol. This is where the 'main()' function starts.
+###
+
+# NOTE:
+# __libc_start_main can be preloaded into the process (using LD_PRELOAD) like any other library 

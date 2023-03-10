@@ -1,0 +1,6 @@
+### PCAP files operation ###
+############################
+
+# capture a pcap file
+# capture = rdpcap(filename)
+# example -->  capture = rdpcap('capture.pcapng')

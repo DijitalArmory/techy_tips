@@ -1,0 +1,16 @@
+# 1. curl -- https://everything.curl.dev/http
+# The '&' character is a special character recognized by curl. If you don't encase it in a string, it's gonna try to do w/e curl does with &
+# url encodings chart -- https://www.w3schools.com/tags/ref_urlencode.ASP
+# url encodings wiki and charts -- https://en.wikipedia.org/wiki/URL_encoding
+# multiple paramters in url -- https://support.clickmeter.com/hc/en-us/articles/211032666-URL-parameters-How-to-pass-it-to-the-destination-URL
+# https://osric.com/chris/accidental-developer/2018/01/using-nc-netcat-to-make-an-http-request/
+# http requests w/python -- https://requests.readthedocs.io/en/latest/
+
+
+# nc -- https://linux.die.net/man/1/nc
+ 
+# socat --
+# www.dest-unreach.org
+# https://techsquad.rocks/blog/cat_and_friends_netcat_socat/
+# https://www.poftut.com/linux-multipurpose-relay-socat-command-tutorial-with-examples/
+

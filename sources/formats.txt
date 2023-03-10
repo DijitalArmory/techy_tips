@@ -1,0 +1,19 @@
+# 1. Multiple Formats
+# https://github.com/corkami/formats
+# github repo that provides infor on various file formats 
+
+# 2. HTML File Format
+# https://docs.fileformat.com/web/html/
+
+# 3. PNG Specifications
+# https://en.wikipedia.org/wiki/Portable_Network_Graphics
+# https://www.w3.org/TR/2003/REC-PNG-20031110/#5Chunk-layout
+
+# 4. RIFF file format
+# https://en.wikipedia.org/wiki/Resource_Interchange_File_Format
+
+# 5. SVG file format
+# https://www.w3.org/2000/svg
+
+# 6. en4 file extension
+# https://file.org/extension/en4

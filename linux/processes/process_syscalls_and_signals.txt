@@ -1,0 +1,11 @@
+# Syscalls are a way for a process to call INTO the os. 
+# The os canNOT call into a process
+
+# SIGNALS are how the os gets a process' attention.
+# Signal PAUSE process execution and invoke a "signal handler"
+# Signal handlers are functions that take in one argument: The signal number
+
+# Without a handler for a signal, the default action is used... Often, this action is to 'KILL' the process
+
+# NOTE:
+# SIGKILL (signal 9) and SIGSTOP (signal 19) canNOT be handled (these need to be sent mnanually)

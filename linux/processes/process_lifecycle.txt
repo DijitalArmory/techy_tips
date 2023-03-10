@@ -1,0 +1,7 @@
+# 1. Process is created
+# 2. Program is loaded
+# 3. Program is initialized
+# 4. Program is launched
+# 5. Program reads it's arguments and environment
+# 6. Program runs
+# 7. Program terminates

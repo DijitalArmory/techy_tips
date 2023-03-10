@@ -1,0 +1,19 @@
+# '/' -- the anchor of the file system aka 'root'
+
+# '/usr -- the unix system resource... contains all the system files
+
+# '/usr/bin' -- executable files for programs installed on the computer
+
+# '/usr/lib' -- shared libraries for use by programs on the computer
+
+# '/usr/share' -- program resources (icons, art assets, etc)
+
+# '/etc' -- system configuration
+
+# '/var' -- logs, caches, etc. 
+
+# '/home' -- user owned data
+
+# '/proc' -- runtime proccess data
+
+# '/tmp' -- temporary data storage  

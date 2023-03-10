@@ -1,0 +1,31 @@
+### COMPUTER ARCHITECTURE ###
+-----------------------------
+
+# All roads lead to the CPU (central processing unit)
+# Example: [[python, js, java, c, c++, rust, etc.]] --> [[interpreted or JIT, compiler]] --> [[CPU]]
+
+# Source website:  https://www.electronics-tutorials.ws/logic/logic_1.html
+# At the center of the CPU are many logic gates
+
+### Basic Logic Gates ###
+# &gate: if both inputs are true, the output is true
+# XORgate: if only one of the two inputs is true, the output is true
+# !gate: if the input (there is only one input for a !gate) is true, the output is false
+
+### Basic Components of a CPU ###
+# Registers: small storage object where memory is placed
+# ALU: performs various computations like adding, subtracting, etc. 
+# CU: decides what to execute; decodes instructions; dispatches data and instructions to other parts of the CPU and computer
+# Cache: layers on storage stacked on top of each other, used for quick access of memory; the smaller the storage, the faster the access; memory from these layers are placed into the registers for computing
+
+### Common Basic Components ###
+# * Most CPUs now have multiple cores *
+# Core One: registers, CU, ALU, level1-cache
+# Core Two: registers, CU, ALU, level1-cache
+# Level2-Cache: connected to cores on one end and the "bridge (which connects to the other storage sources such as RAM, disks, etc.)" on the other end
+
+
+### John Vaugn Newman Architecture ###
+# This is the basic design of the modern CPU/computer architecture
+# 1. Storage layers stacked atop one another, each layer increasing in size and decreasing in speed (and vice versa)
+# 2. For the most part, the whole CPU doesn't differentiate between 'data', 'code', etc.  (which has security implication in itself)

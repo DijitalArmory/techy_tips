@@ -1,0 +1,2 @@
+# 1. SSTV -- how the space station transmitted images from the moon back to earth
+# https://en.wikipedia.org/wiki/Slow-scan_television

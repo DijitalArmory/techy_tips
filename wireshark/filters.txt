@@ -1,0 +1,20 @@
+ip addr commands
+#################
+
+destination filter:
+---------------------
+command= ip.dst==<ip addr> -- example= ip.dst==18.217.1.57
+
+source filter:
+---------------------
+command= ip.src==<ip addr> example=ip.src==18.217.1.57
+	
+
+
+
+filter chaining
+-----------------
+
+command== <protocol> && ip.<field>==<ip addr> && <protocol.method.property> <attribute> <variable>
+
+example== dns && ip.dst==1.1.1.1 && dns.qry.name contains local

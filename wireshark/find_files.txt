@@ -1,0 +1,19 @@
+Find File In Wireshark
+#########################
+
+
+Manual
+-----------------------------
+In the display filter input...
+
+command= <protocol> contains "<file type"> -- example: http contains "pdf"
+- if there are pdf files, it will return the bytes of the file which can be 
+decoded, etc. 
+
+
+Automated
+----------
+command= File > Export Objects > <protocol> -- select file -- click 'save'
+
+- this will display all the files that wireshark found regarding the protocol used in the network data transit 
+and save the file to the directory specified

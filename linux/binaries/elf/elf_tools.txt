@@ -1,0 +1,15 @@
+# GCC -- to make your elf file
+
+# readelf -- to parse elf headers
+
+# objdump -- to parse the elf headers and disassemble the source code
+
+# nm -- to view your elf's symbols
+
+# patchelf -- to change some elf properties
+
+# objcopy -- to swap out elf sections
+
+# strip -- to remove otherwise-helpful information from your elf (such as symbols)
+
+# kaitai struct -- web-based file analyzer to look through your elf interactively

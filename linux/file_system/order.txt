@@ -1,0 +1,2 @@
+file_system_structure.txt
+file_types.txt

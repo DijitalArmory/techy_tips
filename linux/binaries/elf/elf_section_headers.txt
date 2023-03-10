@@ -1,0 +1,16 @@
+### Important Sections ###
+
+# Text
+
+# .text -- the executable portion of the program 
+
+# .plt & .got -- used to resolve and dispatch library calls
+
+# .data -- used for preinitialized global, writeable data (like global arrays with initial values)
+
+# .rodata -- used for global read-only data (such as string constants)
+
+# .bss -- used for uninitialized  global writeable data (like global arrays without initial values)
+
+## NOTE: Section HEADERS are not necessary part of an eld file... Only segments, defined via program headers 
+# are needed for loading data

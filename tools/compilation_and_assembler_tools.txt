@@ -1,0 +1,5 @@
+# Make --  https://makefiletutorial.com/
+
+# gcc - GNU project C and C++ compiler
+
+# AS - the portable GNU assembler.

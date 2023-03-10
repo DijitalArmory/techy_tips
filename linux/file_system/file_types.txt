@@ -1,0 +1,9 @@
+### 'ls' file-types ###
+
+# d = dir
+# l = symbolic link
+# p = named pipe
+# c = character device file
+# b = block device file
+# s = Unix socket 
+

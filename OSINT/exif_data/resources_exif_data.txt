@@ -1,0 +1,2 @@
+# 1. Jeffery's image Metadata viewer
+# 2. exiftool (linux)

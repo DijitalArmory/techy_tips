@@ -1,0 +1,31 @@
+# 1. du -- to estimate file space usage
+
+# 2. binwalk -- extracts hidden files out of files
+
+# 3. xxd -- dumps the formatted hex version of a file
+
+# 4. objdump -- displays information from object files 
+
+# 5. exiftool -- provides metadata about a file
+
+# 6. pdftotext generates a text-file-version of a pdf file
+
+# 7. tr -- translates or delete characters and is very useful for viewing "invisible" text in a file
+
+# 8. dd -- converts and copies files
+
+# 9. lsblk -- lists block and/or mounted  devices
+
+# 10. fls -- lists file and directory names in a disk image
+
+# 11. mmls tool displays the partition layout of a volume system (partition tables)
+
+# 12. srch_strings searches for printable strings in a file -- same as strings but can also print the offset at which a string was found
+
+# 13. Stylesuxx -- an online tool for encoding stego into files or decoding stego from files
+
+# 14. chown -- change ownership of a file/directory
+
+# 15. chmod -- modify file permissions
+
+# 16. wc - print newline, word, and byte counts for each file

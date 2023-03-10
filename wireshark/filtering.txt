@@ -1,0 +1,11 @@
+### filtering methods in scapy ###
+##################################
+
+
+# filtering netwok layers
+# conf.layers.filter([...layers])
+# example --> conf.layers.filter([scapy.Ether, scapy.IP, scapy.UDP])
+
+# filtering captured files
+# captured_file.filter(lambda var: returned-lambda-body )
+# example --> captured_file.filter(lambda port: UDP in port and port[UDP].dport == 56742)

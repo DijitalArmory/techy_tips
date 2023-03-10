@@ -1,0 +1,15 @@
+## Processes get loaded into virtual memory
+
+## Each process has virtual memory that contains...
+# - the binary
+# - the libraries
+# - the heap (for dynamically allocating memory)
+# - the stack (for function local variables)
+# - any memory specifically mapped by the program
+# - some helper regions
+# - kernel code in the "upper-half" of memory (0x8000000000000000 in 64 bit arch) which in NOT accessible to the process itself
+
+# Virtual memory is dedicated to your process
+# Physical memory is dedicated to the whole system
+
+# you can see this whole space by looking at '/proc/self/maps'

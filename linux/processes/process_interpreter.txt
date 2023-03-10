@@ -1,0 +1,17 @@
+# To find the interpreter of an ELF file, example-command='readelf -a /bin/cat } grep interpreter'
+# OR
+# 'file /bin/cat' 
+# OR
+# 'file /bin/cat | grep interpreter'
+
+
+### You can also replace an interpreter... for example...
+# patchelf --set-interprer <interpreter> <program>
+# patchelf --set-interpreter </path/to/interpreter/file?> ./my_program
+
+# patching an elf with a non-existing interpreter will return an error
+# Example: 
+# readelf -a ./cat | grep interpreter
+      # [Requesting program interpreter: /some/interpreter]
+# scorpion@scorpion:~/tests/cat$ ./cat cat.c
+# err--> bash: ./cat: No such file or directory

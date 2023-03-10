@@ -1,0 +1,4 @@
+# Configure Static IP Address
+
+# Manual:
+# https://www.vdtutorials.com/configure-static-ip-address-on-windows-server-2022/

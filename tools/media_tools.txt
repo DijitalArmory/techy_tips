@@ -1,0 +1,10 @@
+# 1. QSSTV -- a tool that helps to transmit pictures over radio frequencies (audio to image <--> image to audio)
+# https://www.cqsstv.com/
+# reasearch how to install qsstv on your OS/distro
+
+
+# 2. pavucontrol -- PulseAudio Volume Control (pavucontrol) is a simple GTK based volume control tool ("mixer") for 
+# the PulseAudio sound server. In contrast to classic mixer tools this one allows you to 
+# control both the volume of hardware devices and of each playback stream separately.
+# open with command --> pavucontrol 
+

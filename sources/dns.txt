@@ -1,0 +1,5 @@
+# 1. DNS
+# note -- and http request is, really making a DNS request
+# DNS requests do not recognize capitalization/lowercase differences. 
+# By default, a domain in wget will be returned in all lowercase letters. 
+# This is a problem if you are looking for case -sensitive data using wget in an http request

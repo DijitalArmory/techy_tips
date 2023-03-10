@@ -1,0 +1,5 @@
+# The binary gets loaded 
+
+###
+# NOTE:
+# Statically linked binaries' addresses are fixed in virtual memory and do not change between executions

@@ -1,0 +1,11 @@
+# 1. Unicode 
+# https://en.wikipedia.org/wiki/List_of_Unicode_characters#Control_codes
+
+# 2. WhiteSpace
+# urlencoding = 0x20
+
+# 3. EM SPACE 
+# encoding = 0xE2 0x80 0x83
+
+# 4. HTTP urlencoding format 
+# %xx (percent hex hex)

@@ -1,0 +1,34 @@
+### Data ###
+--------------
+
+# computers speak binary (because of logic gates)
+
+# binary data is commonly represented in hexidecimal (base16) format
+
+# text representation is originally encoded in ASCII
+
+# ASCII has evolved into UTF-8 (used on 98% of the web)
+
+# Every modern architecture defines 8 bits to a byte
+
+### 64 Bits ARCH ###
+
+# 64 bit machines can reason about 64 bits at a time
+# 64 bits can express a large range of values
+# maximum of 64 bits == "0xffffffffffffffff"
+# adding an extra bit to the maximum capacity of 64 bit storage (0xffffffffffffffff) results in an integer-overflow
+
+### Two's Compliment ###
+
+# Getting the negetive binary number... (Example: 126)
+# Step 1: Write the absolute value of the given number in binary form. -- 0b10011010
+# Step 2: Prefix this number with 0 indicate that it is positive. -- 0b00011010
+# Step 3: Take the complement of each bit by changing zeroes to ones and ones to zero. 11100101  
+# Step 4: Add (+) 1 to sum up your result. This is the two’s complement representation of the negative integer
+# you can write the absolute value of the negetive number and subtract it by 256 to get the negetive value
+
+### Anatomy of a 32 bit word ###
+# 11000000	00000001	11000100	01110101
+# 0xc0		01		0xc4		0x75
+# Most Significat Bits == Left-Most Bits == 'High-Bits'
+# Least Significant Bits == Right-Most Bits == 'Low-Bits' 

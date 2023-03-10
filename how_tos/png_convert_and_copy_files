@@ -1,0 +1,2 @@
+# Example --> fix a PNG file
+# printf '\x00\x00\x00\x0D\x49\x48\x44\x52' | dd of=fixed.png bs=1 seek=8 count=8 conv=notrunc

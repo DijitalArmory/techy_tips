@@ -1,0 +1,9 @@
+# nice -- run a program with modified scheduling priority
+# command execution -- https://www.ibm.com/docs/en/zos/2.2.0?topic=descriptions-nice-run-command-different-priority
+
+
+# timeout -- run a command with a time limit
+# https://linuxize.com/post/timeout-command-in-linux/
+
+# watch -- execute a program periodically, showing output fullscreen
+# command execution help in 'watch --help'

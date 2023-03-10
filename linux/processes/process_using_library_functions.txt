@@ -1,0 +1,6 @@
+# The binary's import symbols have to be resolved using the libraries' export symbols
+# This is all done when the binary is loaded
+# NOTE:
+# you can view a list of the symbols imported from an object file using the 'nm' tool
+# Example:
+# 'nm -D <program>'	(the -d = 'dynamic' meaning imported into the file)

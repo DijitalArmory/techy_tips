@@ -1,0 +1,6 @@
+filter chaining
+-----------------
+
+command== <protocol> && ip.<field>==<ip addr> && <protocol.method.property> <attribute> <variable>
+
+example== dns && ip.dst==1.1.1.1 && dns.qry.name contains local

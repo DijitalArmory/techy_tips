@@ -1,0 +1,11 @@
+## Processes terminate by one of two ways
+# - receiving an unhandled signal
+# - calling the 'exit()' system call --> int exit(int status);
+
+
+### 
+# All processes must be "REAPED"
+# - after termination, they remain in a 'zombie' state until they are 'wait()ed' on their parent.
+# - when this happens, their exit code will be returned to the parent, and the process will be freed. 
+# - if the parent dies without 'wait90ing' on them, they are re-parented to PID 1 and will stay there until they are cleaned up. 
+

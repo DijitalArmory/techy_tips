@@ -1,0 +1,10 @@
+### Every Process has a... ###
+
+# State		--			running, waiting, stopped, zombie
+# Priority	--			and other scheduling information
+# Parent	--			Process which initiated this process
+# Sibling	--			Copy of this process
+# Child		--			Process initiated by this process
+# Shared Resources--			pipes, sockets, files, etc. 
+# Virtual Memory Space--
+# Security Context--			effective UID & GID, saved UID & GID, capabilities  

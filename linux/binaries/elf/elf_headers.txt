@@ -1,0 +1,7 @@
+# Program headers specify information needed to prepare the program for execution
+# Program headers are the source of information used when loading an elf file
+
+### Most Important Header Entry Type ###
+
+# Interp -- defines the library that should be used to load this elf into memory
+# Load -- defines a part of this elf that should be loaded into memory

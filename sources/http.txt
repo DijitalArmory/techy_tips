@@ -1,0 +1,266 @@
+# 1. RFC 1945 HTTP Documentation
+# https://www.ietf.org/rfc/rfc1945.txt
+
+# 2. HTTP URL Scheme
+# <Scheme>://<host>:<port>/<path>/<query?>#<fragment>
+# Scheme = protocol used to access resources
+# Host = host that holds the resource
+# Port = port for program servicing resource
+# Path = identifies the specific resources
+# Query = information that the rresources can use
+# Fragment = client information about the resources
+
+
+# 3. State
+# HTTP = stateless
+# State is maintained by HTTP Cookies
+# HTTP server sets a cookie in the response header
+# Client includes the cookie in future HTTP requests in its header
+# Cookie format: Cookies: this=that
+
+# 4. State Security:
+# HTTP cokie format can be insecure 
+# instead of a plain text value, cookies normally use encrypted session IDs (Cookies: session_id=32jhgJHG)
+# HTTP response sets session_id cookie in it's header -- the requesting client includes the same session_id in its header for the next request 
+# There are instances where cookies do not need to be secured/encrypted (mode=dark, color=red, etc, etc)
+
+# 5. The '&' character is a special character recognized by curl. If you don't encase it in a string, it's gonna try to do w/e curl does with &
+
+# 6. Urlencoding
+# url encodings chart -- https://www.w3schools.com/tags/ref_urlencode.ASP
+# url encodings wiki and charts -- https://en.wikipedia.org/wiki/URL_encoding
+# 
+
+# 7. Multiple URL paramters 
+# https://support.clickmeter.com/hc/en-us/articles/211032666-URL-parameters-How-to-pass-it-to-the-destination-URL
+
+# 8. NC 
+# https://osric.com/chris/accidental-developer/2018/01/using-nc-netcat-to-make-an-http-request/
+
+# 9.Python
+# http requests w/python -- https://requests.readthedocs.io/en/latest/
+
+# 10. Sending HTTP Requests to Server
+# nc --> printf GET /index.html HTTP/1.1rnUser-Agent: nc/0.0.1rnHost: d7189544871adfecf1af83a94b2d24bbrnAccept: */*rnrn | nc 127.0.0.1 80
+
+# 11. Set the host header in an HTTP request  
+# Python --
+#      #!/usr/bin/env python3
+#      import requests
+#      url = 'http://127.0.0.1:80'
+#      headers = {'host': 'fb8ba6b3831bc797b7bf109b883d4e84'}
+#      r = requests.get(url, headers=headers)
+#      print(r.text) 
+####
+
+# 12. Set the path in an HTTP request 
+# curl --> --path http://localhost:80/71151070e28c74464379c352f2d2bad8
+# nc --> printf "GET /1b5756096a68424bd158ff321f4d1641 HTTP/1.0\r\n\r\n" | nc localhost 80
+# Python --
+# #!/usr/bin/env python3
+# import requests
+# url = 'http://127.0.0.1/77f4c415a6d4174af0fd47fdcf5d1546'
+# r = requests.get(url)
+# print(r.text)
+####
+
+# 13. URL encode a path in an HTTP request
+# curl --> --data-urlencode "encoding=utf-8" "127.0.0.1/d3f35c52%202ced4a6b/37a727bf%20aa1df0a1"
+# nc --
+# nc localhost 80
+# GET /3f069ed8%20ff5f297b%2Fd0b1cf05%201c45828b HTTP/1.1
+# Host: 127.0.0.1
+# Connection: close
+####
+# Python --
+# #!/usr/bin/env python3
+# import requests
+# url = 'http://127.0.0.1/4e22c295%204cb50938%2Ffedffd88%201153b709'
+# r = requests.get(url)
+# print(r.text)
+####
+
+# 14. Specify an argument in an HTTP request 
+# curl --> "http://localhost:80/?a=464aac35c5673be077ebbdd1fc361813"
+# nc --> printf 'GET /?a=6ae3e9d833808ec694d0e502e5a9ebdc HTTP/1.1\r\nHost: 127.0.0.1\r\nConnection: close\r\n\r\n' | nc localhost  80
+# Python -- 
+# #!/usr/bin/env python3
+# import requests
+# url = 'http://127.0.0.1:80/?a=d9d3334fcd8f5cbceea85b7ac78cf321'
+# r = requests.get(url)
+# print(r.text)
+####
+
+# 15.Specify multiple arguments in an HTTP request 
+# curl --> "localhost:80/?a=8ebcdcdd150790ea2f339813ae21baf1&b=95b143b6%202091aafd%26b9558788%236374ab4d"
+# nc --
+# nc localhost 80
+# GET /?a=868cf434ca3831bdf797ab6019b288bb&b=142e6fac%20a0af9c8c%26681d005b%23b956c50d HTTP/1.1
+# Content-Length: 79
+# Content-Type: x-www-form-urlencoded
+# Connection: closed
+####
+# Python --
+# #!/usr/bin/env python3
+# import requests
+# url = 'http://127.0.0.1:80/?a=b3b4db1593334461f71d473ff654c452&b=d5eef351%20ea5f9c3c%26f7936969%234bad65d8'
+# r = requests.get(url)
+# print(r.text)
+####
+
+# 16. Include form data in an HTTP request
+# curl --> -F "a=c886c8ed040a1099ab1ae490aaaf6f01" 127.0.0.1:80
+# nc --
+# nc localhost 80
+# POST / HTTP/1.1
+# Host: http://localhost
+# Content-Type: application/x-www-form-urlencoded
+# Content-Length: 34
+# a=4e86205bb1a0304c971b647081279fd4
+####
+# Python --
+#### https://linuxhint.com/python-requests-post-form-data/
+# #!/usr/bin/env python3
+# import requests
+# url = 'http://127.0.0.1:80'
+# form_data = {'a': '69082458e34a8e202bfef179db1dd15d'}
+# r = requests.post(url, data=form_data)
+# print(r.text)
+####
+
+# 17. Include form data with multiple fields in an HTTP request 
+# curl --> localhost -d 'a=81695bdb213c61b38a9b80b17c599eba&b=15f9fdf5%20d013a2d3%2673389646%239ef65f2a'
+# nc --
+# POST / HTTP/1.1
+# Host: http://localhost
+# Content-Type: application/x-www-form-urlencoded
+# Content-Length: 78
+
+# a=9deb105414e1d61725b70ce01a0c7947&b=30acc331%203b44e594%26bf0fef97%238d6b9467
+# Connection: close
+####
+# Python --
+# #!/usr/bin/env python3
+# import requests
+# url = "http://127.0.0.1"
+# //Do not need to encode the data here for {'b': '...'}
+# form_data = {"a": "bc715b9081dcb72b9dbf4d9e690ba54d", "b": "ac03c945 d62f0054&1dde0879#d9f39c2d"}
+# r = requests.post(url, data=form_data)
+# print(r.text)
+####
+
+# 18. Include json data in an HTTP request 
+# curl --> -X POST 127.0.0.1 -H "Content-Type: application/json" "Accpet: application/json" -d '{"a":"fb810f8bf650cbe074c960940973ac25"}'
+# nc --
+#### 
+# POST / HTTP/1.1
+# Content-Type: application/json
+# Accept: application/json
+# Content-Length: 40
+#
+# {"a":"c18653137ecc80aea567ef08db2859bd"}
+# Connection: close
+####
+# Python -- 
+#
+# #!/usr/bin/env python3
+# import requests
+# url = "http://127.0.0.1"
+# r = requests.post(url, json={"a":"b3a1335e15d376a1efdfb575b57bd092"
+})
+# print(r.text)
+####
+
+# 19. Include complex json data in an HTTP request 
+# curl --> -X POST http://127.0.0.1:80 -H "Content-Type: application/json" "Accpet: application/json" -d '{"a":"c33f3cc6a84a8f789d096d3290e667a1", "b": {"c": "04c1a90f", "d": ["6380a327", "d26e928a 415b0d52&68a3d5d3#3e069d2f"]}}'
+# nc --
+# nc localhost 80
+# POST / HTTP/1.1
+# Content-Type: application/json
+# Accept: application/json
+# Content-Length: 122
+#
+# {"a":"50067f1e3020df0d4daded23a226c472", "b": {"c": "e99a164c", "d": ["0ca8775b", "97dd021d 4d1e54ec&1e99dc24#4c9d7869"]}}
+# Connection: close
+####
+Python --
+# #!/usr/bin/env python3
+# import requests
+# url = "http://127.0.0.1"
+# r = requests.post(url, json={"a":"93805c3a3890d9067197d48e1ea848f9", "b": {"c": "6c2d9607", "d": ["06d8020b", "9d08f1c8 967fad7b&a9a64ceb#51192ba7"]}})
+# print(r.text)
+####
+#### https://reqbin.com/req/c-bvijc9he/curl-follow-redirect
+
+# 20. Follow an HTTP redirect from HTTP response 
+# curl --> localhost:80 -L
+# nc --
+# nc localhost 80
+# GET /247c53dc58d5c6a352d6391307feabb1 HTTP/1.1 
+#
+# HTTP/1.1 302 FOUND
+# Content-Type: application/json
+# Accept: application/x-www-form-urlencoded
+# Content-Length: 32
+#
+# Connection: close
+####
+# Python --
+#!/usr/bin/env python3
+# import requests
+# url = "http://127.0.0.1"
+# // python GET requests automatically handle redirects
+# r = requests.post(url)
+# print(r.text)
+####
+
+# 21. Include a cookie from HTTP response
+# curl --
+# curl -b cookie_file localhost:80 (gets cookies and stores in file)
+# curl -c cookie_file localhost:80 (includes cookies stored in file)
+# nc --
+#### Include a cookie from HTTP response 
+####
+# nc localhost 80
+#GET / HTTP/1.1
+#Cookie: cookie=b84f02c45e9192226620a0a484f0c801
+#
+# Connection: close
+####
+# Python -- 
+# #!/usr/bin/env python3
+# import requests
+#url = "http://127.0.0.1"
+# r = requests.post(url)
+# print(r.text)
+# print(r.cookies)
+####
+
+# 22. Make multiple requests in response to stateful HTTP responses 
+####
+## curl -v localhost:80 
+## curl -v -b session=cookie localhost:80
+# -- using "-v" will display the cookies (i.e '$x=$y')
+# compare the session you sent vs the one you get back
+# now run the old command again with the new cookie and do that until it spits out the flag
+# this process can be automated using bash scripting
+# nc --
+# GET / HTTP/1.1
+# Cookie: session=eyJzdGF0ZSI6M30.Y-QZkw.m5_AkUz5elYkdTmM4AXaXuiWi0I
+#
+# HTTP/1.1 302 FOUND
+# Vary: Cookie
+# Location: /
+#
+# Connection: keep-alive
+####
+# Python --
+#!/usr/bin/env python3
+# import requests
+# urls = ["http://127.0.0.1"] * 100
+# cookies = {}
+# for url in urls:
+#    r = requests.get(url, cookies=cookies)
+#    cookies = r.cookies
+#    print(r.text)
+####

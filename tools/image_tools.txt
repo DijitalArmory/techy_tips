@@ -1,0 +1,6 @@
+# 1. feh 
+# (command line tool) feh displays images with the 'feh' command
+
+
+# 2. Image Editor (Online Tool)
+# https://www.online-image-editor.com/

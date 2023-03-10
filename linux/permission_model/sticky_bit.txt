@@ -1,0 +1,1 @@
+### The sticky bit is used for shared directories to limit file removal to only the file owners.

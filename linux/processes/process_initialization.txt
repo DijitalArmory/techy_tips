@@ -1,0 +1,25 @@
+# After everything is loaded, it is initialized
+# Every ELF (and library) can specify constructions (code that is run before the program actually launches)
+# libc can initialize memory regions for dynamic allocation
+
+# -------------------------------------------------------------------------
+# You can initialize your own constructor..
+# Example:
+###
+# __attribut__((constructor)) void hello(){
+#	puts("HELLO");
+# }
+#
+# -------------------------------------------------
+#
+# int main(){
+#	// code
+# }
+#
+#
+###
+# the constructor runs before the main program
+# ---------------------------------------------------------------------------
+
+# NOTE:
+# the initialization can be compiled statically or dynamically

@@ -1,0 +1,93 @@
+### Memory ###
+--------------------
+
+# Since registers are expensive and there are a limited number of them, There needs to be a place to store data
+# ... and have fairly fast access to that data... This place is 'System Memory'
+# Memory is stored and accessed in many location (NIC, disk, video, registers, etc, etc.)
+
+### Process Memory ###
+# process memory is addressed linearly
+# from "0x10000" (for security purposes)to "0x7fffffffffff" (for OS/Architecture purposes)
+# each memory address references one byte of memory; this means 127 terabytes of RAM (no one has that much RAM)
+# That extra amount of RAM is all virtual
+####
+# Process memory starts out partially filled by the operating system
+# A process can ask for more memory from the operating system
+
+### STACK ###
+# A region of memory that is created when a process starts up 
+# The stack is located at an arbitrary address
+# The "PUSH" operator stores data onto the stack
+# the "POP" operator removes data from the stack
+# each entry/removal (push/pop) to the stack is the bit-width of the architecture (32 bits, 64 bits)
+####
+# The stack is "LIFO" (Last-In & First-Out)
+# values can be popped back off the stack (to any register)
+# Immediate values (values not pushed from a
+#  registor... ex - 0x44455542) CAN ONLY be 32 bits (even on a 64 bit architecture) ?Are they still zeroed out//return to this question?
+# you can push the same values onto the stack...
+# ... Example: ...
+# push rax
+# push 0xbobocafe
+# push rax 
+####
+# The "POP" instruction removes the TOP/LAST element in the stack (LIFO)...
+# Example: "pop rbx" <-- removes the value from the top of the stack and into register 'rbx'
+####
+# The stack grows backwards (downwards) towards smaller addresses (push decreases the 'rsp' register & pop increases the 'rsp' register)
+
+#### Accessing Memory ####
+# you can also move data between registers and memory with the "mov" operator
+# Example: ...
+# "mov rax, 0x12345" <-- move the memory address/location '0x12345' into register 'rax' ...
+# "mov rbx, [rax]" <-- move the value stored at memory address/location '0x12345' (the address stored in 'rax') into register 'rbx'
+# "mov rax, 0x133337" <-- move the memory address/location into register 'rax'
+# "mov [rax], rbx" <-- move the value stored in register 'rbx' at the memory address/location of register 'rax' 
+####
+# "sub rsp, 4" <-- (sub because the stack grows backward/downward; 4 because each address memory location contains only 1 Byte)
+# "mov [rsp], rcx <-- (theselast two instructions are the same as "push rcx"
+####
+# Because each addressed memory location contains 1 Byte, an 8 Byte write at address '0x133337' wil write to memory addresses '0x133337' to '0x13333f'((dec)'0x13333f' - 2 (8 Bytes))
+
+### Controlling Write Sizes ###
+# Instead of writing 8 Bytes to a 64 bit register, you can use partials to store/load fewer bits... 
+# Example: // loads 64 bits from memory address/location '0x12345' and and stores the lower 32 bits to memory address/location '0x133337'
+# "mov rax, 0x12345"
+# "mov rbx, [rax]"
+# "mov rax , 0x133337"
+# "mov [rax], ebx" <-- (ebx == lower 32 bits of rbx)
+####
+# ***IMPORTANT***
+# Changing 32 bit partials (e.g. by loading from memory) xeroes out the whole 64-bit register. 
+# storing partials to MEMORY has no such problems though
+
+#### Endianness ####
+# data on most modern systems is stored backwards, in "Little Endian"
+# with Little Endian, data is written in a "flipped" format
+# Example: '0xc001ca75' is written as '0x75ca'01c0 
+
+#### Address Calculation ####
+# You can do some limited calculation for memory addresses
+# Example: Use 'rax' as an offset of some base address (in this case, the stack)
+# "mov rax, 0" <-- using rax as an index into the stack , 8 bytes at a time
+# "mov rbx, [rsp+rax*8]" <-- read a qword right at the stack pointer
+# "inc rax" <-- set it to 1
+# "mov rcx, [rasp+rax*8] <-- read the qword to the right of the previous one"
+# Address Calculation is limited to --> "register+register * (2 or 4 or 8) + value"
+####
+#### RIP Relative Addressing ####
+# The "lea" register is one of the few registers that can directly access the 'rip' (instruction pointer) register
+# Example: ...
+# "lea rax, [rip]" <-- load the address/location of the next instruction into 'rax' register
+# "lea rax, [rip+8]" <-- load the address/location of the next instruction, + 8 Bytes
+# "mov [rip], rax" <-- writes 8 Bytes over the next instruction
+# ** This is all useful when working with data embedded near your code
+# ** This is what makes certain security features on modern machines possible
+
+
+#### Immediate Values ###
+# Immediate values must have their size specified
+# Example: 
+# "mov rax, 0x133337" <-- moves address/location '0x133337' into rax register
+# "mov DWORD PTR {rax], 0x1337" <-- writes a 32 bit '0x1337' (padded with 0 bits) to address/location '0x133337'
+# (depending on the assembler, it might expect 'DWORD' instead of 'DWORD PTR')

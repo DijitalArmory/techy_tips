@@ -1,0 +1,2 @@
+# 1. Handling git conflicts
+# https://www.simplilearn.com/tutorials/git-tutorial/merge-conflicts-in-git#types_of_git_merge_conflicts

@@ -1,0 +1,14 @@
+#### Debugging ####
+###################
+
+#### GDB
+# the go-to debugger for binaries and/or asm
+##### strace 
+# lets you figure out how your program is interacting with the operating system
+##### Rappel
+# lets you explore the effects of instructions
+# get at... "github.com/yrp604/rappel"
+#### Documentation: 
+# x86: opcode listing by Byte value --> "ref.x86asm.net/coder64.html
+# x86: instruction documentation --> "felixcloutier.com/x86/"
+# x86: <intel's x86_64 architecture manual>

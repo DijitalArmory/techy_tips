@@ -1,0 +1,2 @@
+# Changin ownership of a file
+# chown <user.group> <file>

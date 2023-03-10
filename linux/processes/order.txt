@@ -1,0 +1,17 @@
+process_lifecycle.txt
+process_portrait.txt
+process_where_from.txt
+process_load_failure.txt
+process_what_to_load.txt
+process_recursion.txt
+NOTE_1.txt
+process_interpreter.txt
+process_loading_dynamically_linked_elf.txt
+process_load_in_vmem.txt
+process_loading_statically_linked_elf.txt
+process_initialization.txt
+process_launching.txt
+process_read_args_and_env.txt
+process_using_library_functions.txt
+process_interacting_with_environment.txt
+process_termination.txt

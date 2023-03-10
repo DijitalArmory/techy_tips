@@ -1,0 +1,15 @@
+### What To Load? ###
+
+# To figure out what to load, the kernel reads the beggining of a file (i.e. /bin/cat) and makes a decision...
+
+# If the file starts with #!, the kernel extracts the interpreter from the rest of that line and executes this interpreter with the original file as it's argument.
+
+# If the file matches a format in /proc/sys/fs/binfmt_misc, the kernel executes the interpreter specified for that format with the original file as the argument. 
+
+# If the file is a dynamically linked ELF, the kernel reads the interpreter/loader defined in the ELF, loads the interpreter and the original file, and lets the interpreter take control. 
+
+# If the file is a statically linked ELF, the kernel will load it. 
+
+# Other legacy file formats are checked for. 
+
+# -- These can be recursive --

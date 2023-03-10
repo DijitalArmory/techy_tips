@@ -1,0 +1,15 @@
+#### Domain Controllers ####
+############################
+
+# Here are the high-level steps involved in setting up Active Directory (AD) for an enterprise company:
+# - Planning and design: Determine the requirements and design a plan for your AD environment, including the number of domains, forests, and organizational units (OUs) needed.
+# - Installing the Active Directory Domain Services (AD DS) role: You can install AD DS on a server running Windows Server operating system.
+# - Creating a forest and domain: Create the first domain in your AD environment, which will also create the forest.
+# - Creating organizational units: Organize the objects in your AD environment by creating OUs and nesting them in a hierarchical structure.
+# - Creating user accounts: Create user accounts for each person who needs access to the network resources.
+# - Creating groups: Create groups to manage user accounts more efficiently and apply Group Policy settings to a large number of users.
+# - Setting up Group Policy: Configure Group Policy objects (GPOs) to apply settings to users and computers in your AD environment.
+# - Setting up and configuring access to network resources: Configure file and print servers, web servers, email servers, and other network resources and set permissions to control access.
+# - Adding and configuring additional domain controllers: If necessary, add additional domain controllers to provide redundancy and improve performance.
+# - Monitoring and maintaining AD: Regularly monitor the performance and status of AD and make any necessary changes to ensure its continued operation. 
+# ***Resources: 'ChatGPT'

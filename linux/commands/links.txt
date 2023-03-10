@@ -1,0 +1,4 @@
+# create symbolic soft link
+# from dest dir
+# ln [-sf] [abs_path-source] [destination]
+# -s=soft -f=force if dest file exists

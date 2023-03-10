@@ -1,0 +1,9 @@
+###
+# int main(int argc, char **argv, void **envp);
+###
+
+# Your process' entire input from the OUTSIDE world, at launch. compromise of...
+# - the loaded object (binaries and libraries)
+# - command-line arguments (in argv)
+# - "anvironment" (in envp)
+# NOTE: Programs must keep interacting with the outside world to function

@@ -1,0 +1,8 @@
+# 1. chown 
+# https://www.howtoforge.com/linux-chown-command/
+
+# 2. tr  
+# Example: cat file.txt | tr [:blank:] [@] <-- turns all blank-spaces into '@'s
+
+# 3. Stylesuxx
+# # https://stylesuxx.github.io/steganography/

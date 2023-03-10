@@ -1,0 +1,20 @@
+# 1. ASCII Converter
+# https://www.branah.com/ascii-converter
+
+# 2. Url that encrypts and decrypts ROT13 encryption
+# rot13.com/
+
+# 3. Url that converts ascii, hex, decimal, and binary
+# rapidtables.com/
+
+# 4. Url that converts octal to ascii
+# onlineasciitools.com/
+
+# 5. Url that converts chinese to unicode and vice versa (open incognito)
+# http://www.codetoolset.com/convert/unicode_chinese/index.html
+
+# 6. Url unicode encoder and decoder
+# https://www.online-toolz.com/tools/text-unicode-entities-convertor.php
+
+# 7. Url that converts ascii to other decoding formats (hex, dec, bin, b64)
+# https://www.branah.com/ascii-converter

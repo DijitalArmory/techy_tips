@@ -1,0 +1,11 @@
+### Where Do Processes Come From? ###
+
+# By "Mitosis"
+
+# fork (and more recently, clone) are system calls that create a nearly exact copy of the calling process; a parent or a child
+# The child process later uses the 'execve' system call to replace itself w/another process
+
+## EXAMPLE ##
+# - you type '/bin/cat' in bash
+# - bash then 'forks' intselk into the old parent process and the child process 
+# the child process 'execve's /in/cat, becoming the /bin/cat process 

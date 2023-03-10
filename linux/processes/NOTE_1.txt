@@ -1,0 +1,4 @@
+### NOTE ###
+# the file extension doesn't matter when determining the type of file 
+# only the beginning of the file interpreted by the interpreter matters in determining a file type
+# This means that you can take a PDF file and give it the extension of a .docx file, and the PDF will still act as a PDF
