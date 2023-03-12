@@ -1,0 +1,2 @@
+# 1. You can see a list of tweets within a specified range and location (lat, long) by searching in twitter app.
+# query example=geocode:34.138906, -79.829317, 40km
