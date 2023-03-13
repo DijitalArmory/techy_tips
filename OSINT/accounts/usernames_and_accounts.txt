@@ -1,0 +1,12 @@
+# Hunting Usernames and accounts
+
+# 1. https://namechk.com/ -- availability of a username or domain name
+# If unavailable, the names do not exist
+
+# 2. https://namecheckup.com/
+# -- availability of a username or domain name
+
+# 3. https://whatsmyname.app/
+# online app to find username and account associations
+
+

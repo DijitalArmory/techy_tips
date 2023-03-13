@@ -1,2 +1,4 @@
 env_var_set.txt
 env_var_unset.txt
+env_var_list_set_vars.txt
+env_var_list.txt
