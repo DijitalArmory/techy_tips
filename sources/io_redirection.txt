@@ -1,0 +1,5 @@
+# 1. linux io redirection
+# https://bencane.com/2012/04/16/unix-shell-the-art-of-io-redirection/
+
+# 2. linux io redirection 
+# http://www.rozmichelle.com/pipes-forks-dups/

@@ -1,0 +1,3 @@
+# 1. https://www.geeksforgeeks.org/named-pipe-fifo-example-c-program/
+
+# 2. https://www.youtube.com/watch?v=2hba3etpoJg

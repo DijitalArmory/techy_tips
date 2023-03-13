@@ -1,0 +1,5 @@
+# 1. Quick refreshers on fork() versus exec*()
+# 2. https://www.geeksforgeeks.org/difference-fork-exec/
+# 3. https://linuxhint.com/linux-exec-system-call/
+# 4. https://iximiuz.com/en/posts/how-to-on-processes/
+ 

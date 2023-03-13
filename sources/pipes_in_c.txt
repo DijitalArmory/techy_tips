@@ -1,0 +1,2 @@
+# 1. https://jameshfisher.com/2017/02/17/how-do-i-call-a-program-in-c-with-pipes/
+# a useful resource for pipes in c

@@ -1,0 +1,14 @@
+# 1. https://docs.pwntools.com/en/stable/intro.html
+# pnwtools
+
+# 2. https://docs.python.org/3/library/subprocess.html
+# subprocess
+
+# 3. Pwntools cheatsheet
+# https://gist.github.com/anvbis/64907e4f90974c4bdd930baeb705dedf
+
+# For launching programs from Python, we recommend using pwntools, but subprocess should work as well. If you are not using one of these two, you will suffer heavily when you get to input redirection (for that, check out the stdin and stdout arguments to pwn.process or subprocess.Popen).
+
+python_commandline_args.txt
+
+# 3. 

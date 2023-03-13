@@ -6,3 +6,7 @@
 
 # 3. Stylesuxx
 # # https://stylesuxx.github.io/steganography/
+
+# 4. strace 
+# - if strace is ran on a SUID program, it will still not run as root. 
+
